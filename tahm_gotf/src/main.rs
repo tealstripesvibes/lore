@@ -1,7 +1,7 @@
 fn main() {
-    let seriesTitle = "The Adventures of Hemera Nyx";
-    let bookTitle   = "The Galaxy of The Future";
+    let series_title = "The Adventures of Hemera Nyx";
+    let book_title   = "The Galaxy of The Future";
 
-    println!("{} {}", seriesTitle, bookTitle);
+    println!("{} {}", series_title, book_title);
     println!("=[RSK]=");
 }
