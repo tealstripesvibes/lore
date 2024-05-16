@@ -1,17 +1,4 @@
-use std::io::{stdin, stdout, Read, Write};
-
-fn cls() {
-    // clear the terminal screen with a control char
-    print!("{esc}[2J{esc}[1;1H", esc = 27 as char);
-}
-
-fn pause() {
-    let mut stdout = stdout();
-    stdout.write(b"Press Enter to continue...").unwrap();
-    stdout.flush().unwrap();
-    stdin().read(&mut [0]).unwrap();
-    cls();
-}
+mod ui;
 
 fn page_1() {
     let series_title = "The Adventures of Hemera Nyx";
@@ -38,7 +25,7 @@ fn page_2() -> String {
     let license = format!("======\n{}\n======", license);
 
     println!("{}", license);
-    pause();
+    ui::pause();
 
     let trigger_warnings = [
         "Abusive Relationship", 
@@ -72,14 +59,14 @@ fn page_2() -> String {
     );
 
     println!("{}\n", trigger_warnings);
-    pause();
+    ui::pause();
 
     return "".to_string();
 }
 
 fn main() {
     page_1();
-    pause();
+    ui::pause();
     page_2();
-    cls();
+    ui::cls();
 }
