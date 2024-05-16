@@ -1,10 +1,12 @@
-# The Adventures of Hemera Nyx in the Galaxy of The Future! (Rust Edition)
-
-This is a command line version of TAHMGOTF, written by RSK.
+# The Adventures of Hemera Nyx in the Galaxy of The Future!
 
 Find the e-book and paperback versions [here](https://rskrules.com/novels/)
 
-## How to Run This Code
+## Rust Edition
+
+This is a command line version of TAHMGOTF, written by RSK.
+
+### How to Run This Code
 
 1. Install Rust
 2. Install Cargo
