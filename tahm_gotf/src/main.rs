@@ -1,4 +1,19 @@
-fn page_1() -> String {
+use std::io::{stdin, stdout, Read, Write};
+
+fn cls() {
+    // clear the terminal screen with a control char
+    print!("{esc}[2J{esc}[1;1H", esc = 27 as char);
+}
+
+fn pause() {
+    let mut stdout = stdout();
+    stdout.write(b"Press Enter to continue...").unwrap();
+    stdout.flush().unwrap();
+    stdin().read(&mut [0]).unwrap();
+    cls();
+}
+
+fn page_1() {
     let series_title = "The Adventures of Hemera Nyx";
     let preposition  = "in";
     let title        = "The Galaxy of The Future";
@@ -6,7 +21,7 @@ fn page_1() -> String {
     
     let author_logo  = format!("= [{}] =", "RSK");
     
-    return format!("{}\n{}", book_title, author_logo);
+    println!("{}\n{}", book_title, author_logo);
 }
 
 fn page_2() -> String {
@@ -21,6 +36,9 @@ fn page_2() -> String {
          or the use of brief quotations in social media \n \
          to show everyone your good taste in literature";
     let license = format!("======\n{}\n======", license);
+
+    println!("{}", license);
+    pause();
 
     let trigger_warnings = [
         "Abusive Relationship", 
@@ -53,10 +71,15 @@ fn page_2() -> String {
         bug_report_memo
     );
 
-    return format!("{}\n\n{}", license, trigger_warnings);
+    println!("{}\n", trigger_warnings);
+    pause();
+
+    return "".to_string();
 }
 
 fn main() {
-    println!("\n\n{}\n\n", page_1());
-    println!("\n\n{}\n\n", page_2());
+    page_1();
+    pause();
+    page_2();
+    cls();
 }
