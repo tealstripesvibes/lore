@@ -1,5 +1,9 @@
 use crate::ui;
 
+pub fn section_header(text: &str) -> String {
+    return format!("======\n{}\n======", text)
+}
+
 pub fn page() {
     let license = 
         "All rights reserved.\n \
@@ -11,9 +15,8 @@ pub fn page() {
          except for educational purposes \n \
          or the use of brief quotations in social media \n \
          to show everyone your good taste in literature";
-    let license = format!("======\n{}\n======", license);
 
-    println!("{}", license);
+    println!("{}", section_header(license));
     ui::pause();
 
     let trigger_warnings = [
