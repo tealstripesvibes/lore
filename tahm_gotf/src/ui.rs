@@ -1,8 +1,10 @@
 use std::io::{stdin, stdout, Read, Write};
 
 pub fn cls() {
-    // clear the terminal screen with a control char
-    print!("{esc}[2J{esc}[1;1H", esc = 27 as char);
+    print!(
+        "{esc}[2J{esc}[1;1H", // https://stackoverflow.com/a/34837038
+        esc = 27 as char
+    );
 }
 
 pub fn pause() {
