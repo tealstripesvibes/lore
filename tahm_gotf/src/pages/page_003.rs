@@ -8,7 +8,7 @@ pub fn page() {
     ui::pause();
 
     let chapters = [
-        "Prolegomenon",
+        "PROLEGOMENON",
         "THE TRIAL BY STARFIRE",
         "INTERREGNUM: THE SECRET HORRORS!",
         "THE ALIEN GALAXY!",
