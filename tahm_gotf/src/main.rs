@@ -9,20 +9,27 @@ fn main() {
 
     ui::cls();
 
-    let mut i         = 0;
-     if can_continue(&attention) { return; }; i += 1; if i >= page_selection { pages::page_001::page(); attention = use_attention(attention); }
-     if can_continue(&attention) { return; }; i += 1; if i >= page_selection { pages::page_002::page(); attention = use_attention(attention); }
-     if can_continue(&attention) { return; }; i += 1; if i >= page_selection { pages::page_003::page(); attention = use_attention(attention); }
-     if can_continue(&attention) { return; }; i += 1; if i >= page_selection { pages::page_004::page(); attention = use_attention(attention); }
-     if can_continue(&attention) { return; }; i += 1; if i >= page_selection { pages::page_005::page(); attention = use_attention(attention); }
-     if can_continue(&attention) { return; }; i += 1; if i >= page_selection { pages::page_006::page(); attention = use_attention(attention); }
-     if can_continue(&attention) { return; }; i += 1; if i >= page_selection { pages::page_007::page(); attention = use_attention(attention); }
-     if can_continue(&attention) { return; }; i += 1; if i >= page_selection { pages::page_008::page(); attention = use_attention(attention); }
-     if can_continue(&attention) { return; }; i += 1; if i >= page_selection { pages::page_009::page(); attention = use_attention(attention); }
-     if can_continue(&attention) { return; }; i += 1; if i >= page_selection { pages::page_010::page(); attention = use_attention(attention); }
-     if can_continue(&attention) { return; }; i += 1; if i >= page_selection { pages::page_011::page(); attention = use_attention(attention); }
-     if can_continue(&attention) { return; }; i += 1; if i >= page_selection { pages::page_012::page(); attention = use_attention(attention); }
-     if can_continue(&attention) { return; }; i += 1; if i >= page_selection { pages::page_013::page(); attention = use_attention(attention); }
+    for i in 1..=13 {
+        if i < page_selection { continue; }
+        if !can_continue(&attention) { return; };
+        match i {
+             1 => pages::page_001::page(),
+             2 => pages::page_002::page(),
+             3 => pages::page_003::page(),
+             4 => pages::page_004::page(),
+             5 => pages::page_005::page(),
+             6 => pages::page_006::page(),
+             7 => pages::page_007::page(),
+             8 => pages::page_008::page(),
+             9 => pages::page_009::page(),
+            10 => pages::page_010::page(),
+            11 => pages::page_011::page(),
+            12 => pages::page_012::page(),
+            13 => pages::page_013::page(),
+            _ => ()
+        }
+        attention = use_attention(attention);
+    }
 
     if attention > 0 {
         println!("thanks for reading!");
@@ -34,7 +41,7 @@ fn use_attention(attention: u8) -> u8 {
 }
 
 fn can_continue(attention: &u8) -> bool {
-    *attention < 1
+    *attention > 0
 }
 
 fn read_page_number() -> u8 {
