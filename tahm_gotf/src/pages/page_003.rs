@@ -5,7 +5,7 @@ use crate::pages;
 pub fn page() {
     let tribute = pages::page_002::section_header("For my Dad, and his Destination: Universe!");
     println!("{}", tribute);
-    ui::pause();
+    ui::pause(true);
 
     let chapters = [
         "PROLEGOMENON",
@@ -19,5 +19,5 @@ pub fn page() {
     let delimiter = "======";
     let delimiter = &format!("{}\n", delimiter)[..];
     println!("{}", pages::page_002::section_header(&chapters.map(|s| format!("[{}]", s)).join(delimiter)));
-    ui::pause();
+    ui::pause(true);
 }

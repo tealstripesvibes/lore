@@ -17,7 +17,7 @@ pub fn page() {
          to show everyone your good taste in literature";
 
     println!("{}", section_header(license));
-    ui::pause();
+    ui::pause(true);
 
     let trigger_warnings = [
         "Abusive Relationship", 
@@ -51,5 +51,5 @@ pub fn page() {
     );
 
     println!("{}\n", trigger_warnings);
-    ui::pause();
+    ui::pause(true);
 }

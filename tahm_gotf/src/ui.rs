@@ -7,7 +7,8 @@ pub fn cls() {
     );
 }
 
-pub fn pause() {
+pub fn pause(do_actually: bool) {
+    if !do_actually { return }
     let mut stdout = stdout();
     stdout.write(b"Press Enter to continue...").unwrap();
     stdout.flush().unwrap();

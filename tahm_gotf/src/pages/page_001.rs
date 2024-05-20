@@ -10,5 +10,5 @@ pub fn page() {
     
     println!("{}\n{}", book_title, author_logo);
 
-    ui::pause();
+    ui::pause(true);
 }
