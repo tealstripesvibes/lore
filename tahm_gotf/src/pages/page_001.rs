@@ -23,7 +23,6 @@ impl std::fmt::Display for Word {
     }
 }
 
-
 pub fn page() {
     let series_title = get_series_title();
     let collection_title = get_collection_title();
