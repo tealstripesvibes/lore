@@ -7,6 +7,8 @@ fn main() {
     let page_selection = read_page_number();
     let mut attention = read_attention_span();
 
+    ui::cls();
+
     let mut i         = 0;
     if attention < 1 { return; }; i += 1; if i >= page_selection { pages::page_001::page(); attention -= 1; }
     if attention < 1 { return; }; i += 1; if i >= page_selection { pages::page_002::page(); attention -= 1; }

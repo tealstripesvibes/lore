@@ -17,7 +17,7 @@ pub fn page() {
     ];
 
     let delimiter = "======";
-    let delimiter = &format!("{}\n", delimiter)[..];
+    let delimiter = &format!("\n{}\n", delimiter)[..];
     println!("{}", pages::page_002::section_header(&chapters.map(|s| format!("[{}]", s)).join(delimiter)));
     ui::pause(true);
 }
